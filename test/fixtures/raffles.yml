@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  raffle_type: MyString
+  title: MyString
+  description: MyString
+  raffle_date: 2021-03-29
+  init_date: 2021-03-29
+  final_date: 2021-03-29
+  value: 1.5
+
+two:
+  username: MyString
+  raffle_type: MyString
+  title: MyString
+  description: MyString
+  raffle_date: 2021-03-29
+  init_date: 2021-03-29
+  final_date: 2021-03-29
+  value: 1.5

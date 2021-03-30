@@ -1,0 +1,44 @@
+<% content_for :title do %>
+  Detalhes de Raffle
+<% end %>
+
+<div class="page-header">
+  <h1>Detalhes de Raffle</h1>
+  <div>
+    <%= link_to edit_raffle_path(@raffle), class: 'btn btn-success' do %>
+      <%= icon 'fas', 'edit' %>
+      Editar
+    <% end %>
+    <%= link_to raffles_path, class: 'btn btn-outline-secondary' do %>
+      <%= icon 'fas', 'bars' %>
+      Voltar
+    <% end %>
+  </div>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Username:</dt>
+  <dd><%= @raffle.username %></dd>
+
+  <dt>Raffle type:</dt>
+  <dd><%= @raffle.raffle_type %></dd>
+
+  <dt>Title:</dt>
+  <dd><%= @raffle.title %></dd>
+
+  <dt>Description:</dt>
+  <dd><%= @raffle.description %></dd>
+
+  <dt>Raffle date:</dt>
+  <dd><%= @raffle.raffle_date %></dd>
+
+  <dt>Init date:</dt>
+  <dd><%= @raffle.init_date %></dd>
+
+  <dt>Final date:</dt>
+  <dd><%= @raffle.final_date %></dd>
+
+  <dt>Value:</dt>
+  <dd><%= @raffle.value %></dd>
+
+</dl>

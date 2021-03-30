@@ -10,6 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_03_30_025408) do
+
+  create_table "raffles", force: :cascade do |t|
+    t.string "username"
+    t.string "raffle_type"
+    t.string "title"
+    t.string "description"
+    t.date "raffle_date"
+    t.date "init_date"
+    t.date "final_date"
+    t.float "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
