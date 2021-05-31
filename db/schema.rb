@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_06_022426) do
+ActiveRecord::Schema.define(version: 2021_05_31_221838) do
 
   create_table "raffles", force: :cascade do |t|
     t.string "username"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2021_04_06_022426) do
     t.float "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_raffles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +40,5 @@ ActiveRecord::Schema.define(version: 2021_04_06_022426) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "raffles", "users"
 end

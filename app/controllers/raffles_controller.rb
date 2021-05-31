@@ -22,6 +22,7 @@ class RafflesController < ApplicationController
   # POST /raffles
   def create
     @raffle = Raffle.new(raffle_params)
+    @raffle.user = current_user
 
     if @raffle.save
       redirect_to @raffle, notice: 'Raffle was successfully created.'
@@ -53,6 +54,6 @@ class RafflesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def raffle_params
-      params.require(:raffle).permit(:username, :raffle_type, :title, :description, :raffle_date, :init_date, :final_date, :value)
+      params.require(:raffle).permit(:raffle_type, :title, :description, :raffle_date, :init_date, :final_date, :value)
     end
 end
