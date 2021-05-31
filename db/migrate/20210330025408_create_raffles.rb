@@ -1,7 +1,6 @@
 class CreateRaffles < ActiveRecord::Migration[6.1]
   def change
     create_table :raffles do |t|
-      t.string :raffle_type
       t.string :title
       t.string :description
       t.date :raffle_date
