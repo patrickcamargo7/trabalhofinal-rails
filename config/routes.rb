@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :awards
   resources :types
   resources :tickets
   root to: "raffles#index"
