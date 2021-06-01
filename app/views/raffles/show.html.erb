@@ -48,7 +48,7 @@
     <thead>
       <tr>
         <th>Raffle</th>
-        <th>User</th>
+        <th>Purchased?</th>
         <th>Number</th>
         <th></th>
       </tr>
@@ -58,7 +58,13 @@
       <% @tickets.each do |ticket| %>
         <tr>
           <td><%= ticket.raffle.title %></td>
-          <td><%= ticket.user %></td>
+          <td>
+            <% if ticket.user %>
+              <span class="badge badge-danger">Purchased</span>
+            <% else %>
+              <span class="badge badge-success">Available</span>
+            <% end%>
+          </td>
           <td><%= ticket.number %></td>
           <td>
             <%= link_to ticket, class: 'btn btn-info btn-sm' do %>
