@@ -25,6 +25,8 @@ class RafflesController < ApplicationController
     @raffle.user = current_user
 
     if @raffle.save
+      GenerateTicketsJob.perform_later(@raffle)
+
       redirect_to @raffle, notice: 'Raffle was successfully created.'
     else
       render :new
@@ -54,6 +56,6 @@ class RafflesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def raffle_params
-      params.require(:raffle).permit(:raffle_type, :title, :description, :raffle_date, :init_date, :final_date, :value)
+      params.require(:raffle).permit(:type_id, :title, :description, :raffle_date, :init_date, :final_date, :value)
     end
 end

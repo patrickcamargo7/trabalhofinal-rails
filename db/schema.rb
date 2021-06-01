@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_05_31_233042) do
   end
 
   create_table "raffles", force: :cascade do |t|
-    t.string "raffle_type"
     t.string "title"
     t.string "description"
     t.date "raffle_date"
@@ -41,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_05_31_233042) do
 
   create_table "tickets", force: :cascade do |t|
     t.integer "raffle_id", null: false
-    t.integer "user_id", null: false
+    t.integer "user_id"
     t.integer "number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

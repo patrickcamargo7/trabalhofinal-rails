@@ -14,9 +14,9 @@
   <table class="table table-striped table-bordered table-hover">
     <thead>
       <tr>
-        <th>Raffle type</th>
         <th>Title</th>
         <th>Description</th>
+        <th>Type</th>
         <th>Raffle date</th>
         <th>Init date</th>
         <th>Final date</th>
@@ -28,9 +28,9 @@
     <tbody>
       <% @raffles.each do |raffle| %>
         <tr>
-          <td><%= raffle.raffle_type %></td>
           <td><%= raffle.title %></td>
           <td><%= raffle.description %></td>
+          <td><%= raffle.type.description %></td>
           <td><%= raffle.raffle_date %></td>
           <td><%= raffle.init_date %></td>
           <td><%= raffle.final_date %></td>
