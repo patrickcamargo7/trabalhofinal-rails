@@ -1,5 +1,14 @@
 class TicketsController < ApplicationController
-  before_action :set_ticket, only: [:show, :edit, :update, :destroy]
+  before_action :set_ticket, only: [:show, :edit, :update, :destroy, :purchase]
+
+  def purchase
+    @ticket.user = current_user
+    @ticket.save
+
+    flash.now[:notice] = "Ticket #{@ticket.number} successfully purchased!"
+
+    redirect_back(fallback_location: root_path)
+  end 
 
   # GET /tickets
   def index
