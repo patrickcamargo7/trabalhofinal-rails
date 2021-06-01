@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
+  root 'dashboard#index'
+  get 'dashboard', to: 'dashboard#index'
 
   resources :awards
   resources :types
   resources :tickets
-  root to: "raffles#index"
-
+  resources :raffles
 
   devise_for :users
-  resources :raffles
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
