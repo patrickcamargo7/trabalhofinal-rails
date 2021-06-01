@@ -6,7 +6,7 @@ class GenerateTicketsService
   def generate
 
 
-    (1..1000).each do |i|
+    (@raffle.type.initial_number..@raffle.type.amount).step(@raffle.type.step).each do |i|
         @raffle.tickets.create(number: i)
     end
   end
