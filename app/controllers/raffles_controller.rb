@@ -8,6 +8,7 @@ class RafflesController < ApplicationController
 
   # GET /raffles/1
   def show
+    @tickets = Ticket.order(:number).page params[:page]
   end
 
   # GET /raffles/new
